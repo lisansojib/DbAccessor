@@ -1,4 +1,6 @@
 using ApplicationCore.Configs;
+using Infrastructure.Database.Commands;
+using Infrastructure.Database.Queries;
 
 namespace Presentation
 {
@@ -10,6 +12,9 @@ namespace Presentation
 
             var conStr = builder.Configuration.GetConnectionString("DbConnection");
             builder.Services.AddSingleton(new DbConfig { ConnectionString = conStr });
+
+            builder.Services.AddSingleton<UserStatisticsQuery>();
+            builder.Services.AddSingleton<UserStatisticsCommand>();
 
             // Add services to the container.
             builder.Services.AddRazorPages();
