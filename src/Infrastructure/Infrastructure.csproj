@@ -3,11 +3,16 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Database\Commands\" />
+    <Folder Include="Database\Queries\" />
   </ItemGroup>
 
 </Project>
