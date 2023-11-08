@@ -1,3 +1,5 @@
+using ApplicationCore.Configs;
+
 namespace Presentation
 {
     public class Program
@@ -5,6 +7,9 @@ namespace Presentation
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            var conStr = builder.Configuration.GetConnectionString("DbConnection");
+            builder.Services.AddSingleton(new DbConfig { ConnectionString = conStr });
 
             // Add services to the container.
             builder.Services.AddRazorPages();
